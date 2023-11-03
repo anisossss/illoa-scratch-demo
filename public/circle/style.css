@@ -5,9 +5,11 @@
   overflow: hidden;
 }
 body {
-  height: 1000%;
+  background-color: rgb(205, 224, 224);
 }
-
+section .scratched-in {
+  background-color: aqua;
+}
 div.cursor {
   position: absolute;
   top: 50%;
@@ -27,10 +29,6 @@ div.cursor.is-down {
 
 canvas {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
   mix-blend-mode: lighten;
 }
 
@@ -39,7 +37,7 @@ div.pattern {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 110%;
   background-image: url(assets/bg.svg);
 }
 
