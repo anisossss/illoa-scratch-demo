@@ -6,9 +6,8 @@ const port = 3000;
 
 app.use(express.static(path.join(__dirname, "public")));
 
-app.get("/scratch", (req, res) => {
-  // Append ".html" to the URL path
-  res.sendFile(path.join(__dirname, "public", "pattern", "index.html"));
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
 app.listen(port, () => {
