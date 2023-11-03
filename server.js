@@ -7,7 +7,8 @@ const port = 3000;
 app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/pattern", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "/pattern/index.html"));
+  // Append ".html" to the URL path
+  res.sendFile(path.join(__dirname, "public", "pattern", "index.html"));
 });
 
 app.listen(port, () => {
