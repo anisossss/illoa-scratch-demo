@@ -7,11 +7,10 @@
     <link rel="stylesheet" href="style.css" />
     <title>Scratch Card Demo</title>
   </head>
-  <body>
-    <section class="scratched-in" onclick="play()">
+  <body onclick="play()">
+    <section class="scratched-in">
       <div class="pattern"></div>
       <canvas class="in"></canvas>
-      <audio id="audio" src="./assets/scratch.mp3"></audio>
     </section>
 
     <section class="scratched-out">
@@ -30,6 +29,7 @@
 
       <canvas class="out"></canvas>
     </section>
+    <audio id="audio" src="./assets/scratch.mp3"></audio>
 
     <div class="cursor"></div>
 
