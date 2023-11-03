@@ -18,11 +18,19 @@
   </head>
   <body>
     <div class="container" id="js-container">
-      <canvas class="canvas" id="js-canvas" width="500" height="700"></canvas>
+      <canvas
+        class="canvas"
+        id="js-canvas"
+        width="500"
+        height="700"
+        onclick="play()"
+      ></canvas>
+      <audio id="audio" src="./assets/scratch.mp3"></audio>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
     <script src="./scratch.js"></script>
+    <script src="./audio.js"></script>
   </body>
 </html>

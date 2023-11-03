@@ -8,9 +8,10 @@
     <title>Scratch Card Demo</title>
   </head>
   <body>
-    <section class="scratched-in">
+    <section class="scratched-in" onclick="play()">
       <div class="pattern"></div>
       <canvas class="in"></canvas>
+      <audio id="audio" src="./assets/scratch.mp3"></audio>
     </section>
 
     <section class="scratched-out">
@@ -32,6 +33,7 @@
 
     <div class="cursor"></div>
 
+    <script src="./audio.js"></script>
     <script src="circle-mask.js"></script>
   </body>
 </html>
