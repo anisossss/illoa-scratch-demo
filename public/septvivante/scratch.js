@@ -13,10 +13,8 @@ let isDrawing = false;
 let offscreenCanvas, offscreenCtx;
 
 function drawImages() {
-  // Draw the background image
   ctx.drawImage(backgroundImage, 0, 0, canvas.width, canvas.height);
 
-  // Draw the top image
   ctx.drawImage(topImage, 0, 0, canvas.width, canvas.height);
 }
 
@@ -28,7 +26,6 @@ function scratch(e) {
   const y = e.clientY - rect.top;
 
   offscreenCtx.globalCompositeOperation = "destination-out";
-  // Draw the brush image at the location of the scratch instead of the rectangle
   offscreenCtx.drawImage(brushImage, x, y, 20, 20);
 
   ctx.clearRect(0, 0, canvas.width, canvas.height);
