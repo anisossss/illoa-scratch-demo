@@ -8,7 +8,7 @@ const brushImage = new Image();
 
 backgroundImage.src = "../assets/images/BGKHAZNA.svg";
 topImage.src = "../assets/images/KHAZNA.svg";
-brushImage.src = "../assets/images/brush2.png";
+brushImage.src = "../assets/brushs/brush1.png";
 let isDrawing = false;
 let offscreenCanvas, offscreenCtx;
 

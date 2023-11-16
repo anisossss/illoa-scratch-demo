@@ -8,7 +8,7 @@ const brushImage = new Image();
 
 backgroundImage.src = "../assets/images/BGGOAL.svg";
 topImage.src = "../assets/images/GOAL.svg";
-brushImage.src = "../assets/images/brush2.png";
+brushImage.src = "../assets/brushs/cat.png";
 let isDrawing = false;
 let offscreenCanvas, offscreenCtx;
 
