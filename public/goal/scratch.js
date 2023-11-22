@@ -1,6 +1,6 @@
 const canvas = document.getElementById("scratchCard");
-canvas.width = 800;
-canvas.height = 600;
+canvas.width = 500;
+canvas.height = 650;
 const ctx = canvas.getContext("2d");
 const backgroundImage = new Image();
 const topImage = new Image();
@@ -8,16 +8,19 @@ const brushImage = new Image();
 
 backgroundImage.src = "../assets/images/BGGOAL.svg";
 topImage.src = "../assets/images/GOAL.svg";
-brushImage.src = "../assets/brushs/cat.png";
+brushImage.src = "../assets/brushs/brush3.png";
 let isDrawing = false;
 let offscreenCanvas, offscreenCtx;
 
+const topImageWidth = 448;
+const topImageHeight = 198;
+
+const topImageX = 25;
+const topImageY = 293;
 function drawImages() {
-  // Draw the background image
   ctx.drawImage(backgroundImage, 0, 0, canvas.width, canvas.height);
 
-  // Draw the top image
-  ctx.drawImage(topImage, 0, 0, canvas.width, canvas.height);
+  ctx.drawImage(topImage, topImageX, topImageY, topImageWidth, topImageHeight);
 }
 
 function scratch(e) {
@@ -28,7 +31,6 @@ function scratch(e) {
   const y = e.clientY - rect.top;
 
   offscreenCtx.globalCompositeOperation = "destination-out";
-  // Draw the brush image at the location of the scratch instead of the rectangle
   offscreenCtx.drawImage(brushImage, x, y, 20, 20);
 
   ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -50,10 +52,16 @@ canvas.addEventListener("mouseup", () => {
 
 topImage.onload = () => {
   offscreenCanvas = document.createElement("canvas");
-  offscreenCanvas.width = canvas.width;
-  offscreenCanvas.height = canvas.height;
   offscreenCtx = offscreenCanvas.getContext("2d");
-  offscreenCtx.drawImage(topImage, 0, 0, canvas.width, canvas.height);
+  offscreenCanvas.width = 500;
+  offscreenCanvas.height = 500;
+  offscreenCtx.drawImage(
+    topImage,
+    topImageX,
+    topImageY,
+    topImageWidth,
+    topImageHeight
+  );
 
   drawImages();
 };
