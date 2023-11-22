@@ -6,8 +6,8 @@ const backgroundImage = new Image();
 const topImage = new Image();
 const brushImage = new Image();
 
-backgroundImage.src = "../assets/images/BG7VIVANTE.png";
-topImage.src = "../assets/images/7VIVANTE.png";
+backgroundImage.src = "../assets/images/BG7VIVANTE.svg";
+topImage.src = "../assets/images/7VIVANTE.svg";
 brushImage.src = "../assets/brushs/brush1.png";
 let isDrawing = false;
 let offscreenCanvas, offscreenCtx;
