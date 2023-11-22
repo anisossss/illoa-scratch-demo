@@ -6,16 +6,16 @@ const backgroundImage = new Image();
 const topImage = new Image();
 const brushImage = new Image();
 
-backgroundImage.src = "../assets/images/BGKHAZNA.svg";
+backgroundImage.src = "../assets/images/BGKHAZNA.png";
 topImage.src = "../assets/images/KHAZNA.svg";
-brushImage.src = "../assets/brushs/brush1.png";
+brushImage.src = "../assets/brushs/brush2.png";
 let isDrawing = false;
 let offscreenCanvas, offscreenCtx;
-const topImageWidth = 448;
-const topImageHeight = 198;
+const topImageWidth = 544;
+const topImageHeight = 282;
 
-const topImageX = 25;
-const topImageY = 293;
+const topImageX = 80;
+const topImageY = 236;
 function drawImages() {
   ctx.drawImage(backgroundImage, 0, 0, canvas.width, canvas.height);
 
@@ -52,8 +52,8 @@ canvas.addEventListener("mouseup", () => {
 topImage.onload = () => {
   offscreenCanvas = document.createElement("canvas");
   offscreenCtx = offscreenCanvas.getContext("2d");
-  offscreenCanvas.width = 500;
-  offscreenCanvas.height = 500;
+  offscreenCanvas.width = 700;
+  offscreenCanvas.height = 600;
   offscreenCtx.drawImage(
     topImage,
     topImageX,
