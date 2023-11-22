@@ -1,21 +1,25 @@
 const canvas = document.getElementById("scratchCard");
-canvas.width = 800;
-canvas.height = 600;
+canvas.width = 940;
+canvas.height = 646;
 const ctx = canvas.getContext("2d");
 const backgroundImage = new Image();
 const topImage = new Image();
 const brushImage = new Image();
 
-backgroundImage.src = "../assets/images/BG7VIVANTE.svg";
-topImage.src = "../assets/images/7VIVANTE.svg";
+backgroundImage.src = "../assets/images/BG7VIVANTE.png";
+topImage.src = "../assets/images/7VIVANTE.png";
 brushImage.src = "../assets/brushs/brush1.png";
 let isDrawing = false;
 let offscreenCanvas, offscreenCtx;
+const topImageWidth = 470;
+const topImageHeight = 338;
 
+const topImageX = 68;
+const topImageY = 182;
 function drawImages() {
   ctx.drawImage(backgroundImage, 0, 0, canvas.width, canvas.height);
 
-  ctx.drawImage(topImage, 0, 0, canvas.width, canvas.height);
+  ctx.drawImage(topImage, topImageX, topImageY, topImageWidth, topImageHeight);
 }
 
 function scratch(e) {
@@ -47,10 +51,16 @@ canvas.addEventListener("mouseup", () => {
 
 topImage.onload = () => {
   offscreenCanvas = document.createElement("canvas");
-  offscreenCanvas.width = canvas.width;
-  offscreenCanvas.height = canvas.height;
   offscreenCtx = offscreenCanvas.getContext("2d");
-  offscreenCtx.drawImage(topImage, 0, 0, canvas.width, canvas.height);
+  offscreenCanvas.width = 600;
+  offscreenCanvas.height = 600;
+  offscreenCtx.drawImage(
+    topImage,
+    topImageX,
+    topImageY,
+    topImageWidth,
+    topImageHeight
+  );
 
   drawImages();
 };
